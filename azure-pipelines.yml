@@ -31,9 +31,9 @@ jobs:
       publishJUnitResults: true
       testResultsFiles: '**/TEST-*.xml'
       javaHomeOption: 'JDKVersion'
-      sonarQubeRunAnalysis: true
-      sqGradlePluginVersionChoice: 'build'
-      spotBugsAnalysis: false
+      sonarQubeRunAnalysis: false
+#      sqGradlePluginVersionChoice: 'build'
+#      spotBugsAnalysis: false
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: 'ApiUsers/build/libs'
