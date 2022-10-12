@@ -1,0 +1,41 @@
+trigger:
+- master
+variables:
+- group: MySqlCGP
+pool:
+  name: DevOpsTest
+jobs:
+- job: CompilerJob
+  displayName: Compiler Job
+  steps:
+  - checkout: self
+  - task: replacetokens@5
+    inputs:
+      rootDirectory: 'ApiUsers/src/main/resources'
+      targetFiles: 'application.properties'
+      encoding: 'auto'
+      tokenPattern: 'azpipelines'
+      writeBOM: true
+      actionOnMissing: 'warn'
+      keepToken: false
+      actionOnNoFiles: 'continue'
+      enableTransforms: false
+      enableRecursion: false
+      useLegacyPattern: false
+      enableTelemetry: true
+  - task: Gradle@3
+    inputs:
+      gradleWrapperFile: 'ApiUsers/gradlew'
+      workingDirectory: 'ApiUsers'
+      tasks: 'build'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      javaHomeOption: 'JDKVersion'
+      sonarQubeRunAnalysis: true
+      sqGradlePluginVersionChoice: 'build'
+      spotBugsAnalysis: false
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: 'ApiUsers/build/libs'
+      artifact: 'drop'
+      publishLocation: 'pipeline'
