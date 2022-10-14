@@ -1,5 +1,6 @@
 trigger:
 - master
+name: $(Build.SourceBranchName).$(Date:yyyyMMdd).$(Rev:r)
 variables:
 - group: MySqlCGP
 pool:
