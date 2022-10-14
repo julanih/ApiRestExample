@@ -38,6 +38,7 @@ public class UserController {
 		return new ResponseEntity<>(service.getUser(id), HttpStatus.OK);
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@DeleteMapping("/{id}")
 	public ResponseEntity deleteUser(@PathVariable Integer id) {
 		service.deleteUser(id);
