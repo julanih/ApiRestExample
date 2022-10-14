@@ -32,7 +32,7 @@ jobs:
       publishJUnitResults: true
       testResultsFiles: '**/TEST-*.xml'
       javaHomeOption: 'JDKVersion'
-      sonarQubeRunAnalysis: false
+      sonarQubeRunAnalysis: true
       sqGradlePluginVersionChoice: 'build'
       spotBugsAnalysis: false
   - task: SonarQubePublish@5
