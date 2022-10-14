@@ -10,7 +10,7 @@ class ApiRestApplicationTests {
 
 	@Test
 	void contextLoads() {
-		assertTrue(ApiRestApplicationTests.class.isLocalClass());
+		assertTrue(ApiRestApplicationTests.class.isInstance(getClass()));
 	}
 
 }

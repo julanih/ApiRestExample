@@ -31,6 +31,7 @@ jobs:
       tasks: 'build'
       publishJUnitResults: true
       testResultsFiles: '**/TEST-*.xml'
+      testRunTitle: 'Unit Tests Results'
       javaHomeOption: 'JDKVersion'
       sonarQubeRunAnalysis: true
       sqGradlePluginVersionChoice: 'build'
