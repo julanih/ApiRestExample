@@ -33,8 +33,11 @@ jobs:
       testResultsFiles: '**/TEST-*.xml'
       javaHomeOption: 'JDKVersion'
       sonarQubeRunAnalysis: false
-#      sqGradlePluginVersionChoice: 'build'
-#      spotBugsAnalysis: false
+      sqGradlePluginVersionChoice: 'build'
+      spotBugsAnalysis: false
+  - task: SonarQubePublish@5
+    inputs:
+      pollingTimeoutSec: '300'
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: 'ApiUsers/build/libs'
