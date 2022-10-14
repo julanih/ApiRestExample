@@ -1,6 +1,7 @@
 package com.julanih.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,11 @@ public class UserService {
 	}
 	
 	public User getUser(Integer id) {
-		return userRepo.findById(id).get();
+		Optional<User> opt = userRepo.findById(id);
+		if (opt.isPresent())
+			return opt.get();
+		else
+			return new User();
 	}
 	
 	public void deleteUser(Integer id) {

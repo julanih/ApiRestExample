@@ -1,40 +1,17 @@
-package com.julanih.demo.entity;
+package com.julanih.demo.dto;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import com.julanih.demo.dto.UserDTO;
-
-@Entity
-@Table(name = "users")
-public class User {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserDTO {
+	
 	private Integer id;
-	@Column(name = "firstName")
 	private String name;
 	private String email;
 	private BigDecimal salary;
 	private boolean active;
 	private int age;
 	
-	public User() {
-		// Default constructor
-	}
-
-	public User(UserDTO user) {
-		this.id = user.getId();
-		this.name = user.getName();
-		this.email = user.getEmail();
-		this.salary = user.getSalary();
-		this.active = user.isActive();
-		this.age = user.getAge();
+	public UserDTO() {
 	}
 
 	public Integer getId() {

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.julanih.demo.dto.UserDTO;
 import com.julanih.demo.entity.User;
 import com.julanih.demo.service.UserService;
 
@@ -24,7 +25,8 @@ public class UserController {
 	private UserService service;
 	
 	@PostMapping("/save")
-	public ResponseEntity<User> saveUser(@RequestBody User user) {
+	public ResponseEntity<User> saveUser(@RequestBody UserDTO userdto) {
+		User user = new User(userdto);
 		return new ResponseEntity<>(service.saveUser(user), HttpStatus.CREATED);
 	}
 	
