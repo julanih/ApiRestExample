@@ -29,12 +29,12 @@ public class User {
 	}
 
 	public User(UserDTO user) {
-		this.id = user.getId();
-		this.name = user.getName();
-		this.email = user.getEmail();
-		this.salary = user.getSalary();
-		this.active = user.isActive();
-		this.age = user.getAge();
+		this.id = user.getIddto();
+		this.name = user.getNamedto();
+		this.email = user.getEmaildto();
+		this.salary = user.getSalarydto();
+		this.active = user.isActivedto();
+		this.age = user.getAgedto();
 	}
 
 	public Integer getId() {

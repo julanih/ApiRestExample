@@ -4,61 +4,62 @@ import java.math.BigDecimal;
 
 public class UserDTO {
 	
-	private Integer id;
-	private String name;
-	private String email;
-	private BigDecimal salary;
-	private boolean active;
-	private int age;
+	private Integer iddto;
+	private String namedto;
+	private String emaildto;
+	private BigDecimal salarydto;
+	private boolean activedto;
+	private int agedto;
 	
 	public UserDTO() {
+		// Default constructor
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getIddto() {
+		return iddto;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIddto(Integer id) {
+		this.iddto = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNamedto() {
+		return namedto;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNamedto(String name) {
+		this.namedto = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmaildto() {
+		return emaildto;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmaildto(String email) {
+		this.emaildto = email;
 	}
 
-	public BigDecimal getSalary() {
-		return salary;
+	public BigDecimal getSalarydto() {
+		return salarydto;
 	}
 
-	public void setSalary(BigDecimal salary) {
-		this.salary = salary;
+	public void setSalarydto(BigDecimal salary) {
+		this.salarydto = salary;
 	}
 
-	public boolean isActive() {
-		return active;
+	public boolean isActivedto() {
+		return activedto;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
+	public void setActivedto(boolean active) {
+		this.activedto = active;
 	}
 
-	public int getAge() {
-		return age;
+	public int getAgedto() {
+		return agedto;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setAgedto(int age) {
+		this.agedto = age;
 	}
 }
